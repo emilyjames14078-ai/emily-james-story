@@ -7,6 +7,7 @@
 <title>Emily & James | Our Story</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -18,38 +19,42 @@ html {
 }
 
 body {
-    background: #090807;
+    background: #080706;
     color: #eee7df;
     font-family: Georgia, "Times New Roman", serif;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* Story Background */
+/* =========================================
+   NEW STORY BACKGROUND
+   ========================================= */
+
 .background {
     position: fixed;
     inset: 0;
-    overflow: hidden;
-    pointer-events: none;
     z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 50% 38%,
-            rgba(116, 70, 52, 0.16),
-            transparent 30%
+            ellipse at 50% 32%,
+            rgba(132, 73, 47, 0.30) 0%,
+            rgba(94, 52, 38, 0.18) 22%,
+            transparent 52%
         ),
         radial-gradient(
-            circle at 15% 85%,
-            rgba(74, 48, 38, 0.12),
-            transparent 28%
+            ellipse at 8% 88%,
+            rgba(91, 54, 40, 0.18) 0%,
+            transparent 36%
         ),
         radial-gradient(
-            circle at 88% 15%,
-            rgba(100, 72, 55, 0.08),
-            transparent 25%
+            ellipse at 92% 12%,
+            rgba(82, 57, 43, 0.14) 0%,
+            transparent 34%
         ),
-        #090807;
+        #080706;
 }
 
 .background::before {
@@ -59,40 +64,69 @@ body {
 
     background:
         radial-gradient(
-            circle at center,
-            transparent 0,
-            rgba(0,0,0,0.08) 45%,
-            rgba(0,0,0,0.48) 100%
+            ellipse at center,
+            transparent 0%,
+            rgba(0,0,0,0.12) 45%,
+            rgba(0,0,0,0.58) 100%
         );
 }
 
 .background::after {
     content: "";
     position: absolute;
-    width: 520px;
-    height: 520px;
+
+    width: 650px;
+    height: 650px;
+
+    top: 18%;
     left: 50%;
-    top: 36%;
-    transform: translate(-50%, -50%);
+
+    transform: translateX(-50%);
+
     border-radius: 50%;
-    background: rgba(150, 96, 68, 0.05);
-    filter: blur(110px);
+
+    background: rgba(151, 82, 52, 0.09);
+
+    filter: blur(130px);
 }
 
-.background span {
-    display: none;
+/* Very subtle texture */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+
+    opacity: 0.025;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.8) 0.6px,
+            transparent 0.7px
+        );
+
+    background-size: 4px 4px;
 }
 
-/* Navigation */
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
 nav {
     position: relative;
     z-index: 5;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 28px 7%;
+
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    background: rgba(9,8,7,0.45);
+
+    background: rgba(8,7,6,0.42);
+
     backdrop-filter: blur(10px);
 }
 
@@ -119,124 +153,184 @@ nav {
     color: #e9ded3;
 }
 
-/* Hero */
+/* =========================================
+   HERO
+   ========================================= */
+
 .hero {
     position: relative;
     z-index: 1;
+
     min-height: 82vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 100px 20px;
 }
 
 .hero-content {
     max-width: 900px;
+
     animation: fadeIn 1.5s ease forwards;
 }
 
 .small-title {
     color: #a98a6c;
+
     text-transform: uppercase;
+
     letter-spacing: 6px;
+
     font-size: 11px;
+
     margin-bottom: 28px;
 }
 
 h1 {
     font-size: clamp(58px, 11vw, 125px);
+
     font-weight: normal;
+
     letter-spacing: -5px;
+
     line-height: 0.9;
 }
 
 .ampersand {
     color: #936d55;
+
     font-style: italic;
+
     padding: 0 8px;
 }
 
 .subtitle {
     margin: 38px auto 0;
+
     max-width: 650px;
+
     color: #9e9690;
+
     font-size: 16px;
+
     line-height: 1.9;
 }
 
 .start-button {
     display: inline-block;
+
     margin-top: 42px;
+
     padding: 15px 34px;
+
     border: 1px solid rgba(190,150,110,0.4);
+
     color: #ddd2c8;
+
     text-decoration: none;
+
     font-size: 11px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     transition: 0.35s;
 }
 
 .start-button:hover {
     background: rgba(190,150,110,0.08);
+
     border-color: #b99b7a;
+
     transform: translateY(-2px);
 }
 
-/* Divider */
+/* =========================================
+   DIVIDER
+   ========================================= */
+
 .divider {
     width: 70px;
+
     height: 1px;
+
     background: rgba(185,155,120,0.45);
+
     margin: 0 auto 35px;
 }
 
-/* Story section */
+/* =========================================
+   STORY SECTION
+   ========================================= */
+
 .story-intro {
     position: relative;
     z-index: 1;
+
     padding: 120px 8%;
+
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .story-inner {
     max-width: 900px;
+
     margin: auto;
 }
 
 .section-label {
     color: #9d765c;
+
     text-transform: uppercase;
+
     letter-spacing: 4px;
+
     font-size: 10px;
+
     margin-bottom: 22px;
 }
 
 .story-intro h2 {
     font-size: clamp(34px, 5vw, 55px);
+
     font-weight: normal;
+
     margin-bottom: 28px;
+
     color: #e4dbd3;
 }
 
 .story-intro p {
     color: #9f9892;
+
     line-height: 2;
+
     font-size: 16px;
+
     max-width: 720px;
 }
 
-/* Chapters */
+/* =========================================
+   CHAPTERS
+   ========================================= */
+
 .chapters {
     position: relative;
     z-index: 1;
+
     padding: 110px 8%;
+
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .chapters-inner {
     max-width: 900px;
+
     margin: auto;
 }
 
@@ -246,17 +340,25 @@ h1 {
 
 .chapter-heading h2 {
     font-size: 42px;
+
     font-weight: normal;
+
     color: #e4dbd3;
 }
 
 .chapter-card {
     display: grid;
+
     grid-template-columns: 70px 1fr auto;
+
     gap: 25px;
+
     align-items: center;
+
     padding: 28px 20px;
+
     border-top: 1px solid rgba(255,255,255,0.07);
+
     transition: 0.35s;
 }
 
@@ -266,68 +368,102 @@ h1 {
 
 .chapter-card:hover {
     background: rgba(255,255,255,0.025);
+
     padding-left: 28px;
 }
 
 .chapter-number {
     color: #98745b;
+
     font-size: 12px;
+
     letter-spacing: 2px;
 }
 
 .chapter-title {
     color: #d9d0c8;
+
     font-size: 19px;
 }
 
 .chapter-status {
     color: #66615d;
+
     font-size: 11px;
+
     letter-spacing: 1px;
+
     text-transform: uppercase;
 }
 
-/* Closing */
+/* =========================================
+   CLOSING
+   ========================================= */
+
 .closing {
     position: relative;
     z-index: 1;
+
     text-align: center;
+
     padding: 130px 20px;
+
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .closing p {
     color: #756e69;
+
     font-size: 14px;
+
     letter-spacing: 1px;
 }
 
-/* Footer */
+/* =========================================
+   FOOTER
+   ========================================= */
+
 footer {
     position: relative;
     z-index: 1;
+
     text-align: center;
+
     padding: 35px 20px;
+
     border-top: 1px solid rgba(255,255,255,0.05);
+
     color: #55514d;
+
     font-size: 11px;
+
     letter-spacing: 1px;
 }
 
-/* Animation */
+/* =========================================
+   ANIMATION
+   ========================================= */
+
 @keyframes fadeIn {
+
     from {
         opacity: 0;
+
         transform: translateY(15px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
+
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 650px) {
 
     nav {
@@ -361,7 +497,9 @@ footer {
 
     .chapter-card {
         grid-template-columns: 45px 1fr;
+
         gap: 12px;
+
         padding: 24px 5px;
     }
 
@@ -376,29 +514,47 @@ footer {
     .closing {
         padding: 90px 20px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="background">
-    <span></span>
-</div>
+<div class="background"></div>
+
+<!-- NAVIGATION -->
 
 <nav>
-    <div class="logo">E & J</div>
+
+    <div class="logo">
+        E & J
+    </div>
 
     <div class="nav-links">
-        <a href="#story">Our Story</a>
-        <a href="#chapters">Chapters</a>
+
+        <a href="#story">
+            Our Story
+        </a>
+
+        <a href="#chapters">
+            Chapters
+        </a>
+
     </div>
+
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
+
     <div class="hero-content">
 
-        <div class="small-title">A story about two people</div>
+        <div class="small-title">
+            A story about two people
+        </div>
 
         <h1>
             Emily <span class="ampersand">&</span> James
@@ -409,19 +565,29 @@ footer {
             made mistakes, found each other, and slowly learned what it means to stay.
         </p>
 
-        <a href="#story" class="start-button">Enter Our Story</a>
+        <a href="#story" class="start-button">
+            Enter Our Story
+        </a>
 
     </div>
+
 </section>
 
+<!-- STORY -->
+
 <section class="story-intro" id="story">
+
     <div class="story-inner">
 
         <div class="divider"></div>
 
-        <div class="section-label">Our Story</div>
+        <div class="section-label">
+            Our Story
+        </div>
 
-        <h2>Before we became us.</h2>
+        <h2>
+            Before we became us.
+        </h2>
 
         <p>
             This is the story of Emily and James.
@@ -431,55 +597,124 @@ footer {
         </p>
 
     </div>
+
 </section>
+
+<!-- CHAPTERS -->
 
 <section class="chapters" id="chapters">
 
     <div class="chapters-inner">
 
         <div class="chapter-heading">
-            <div class="section-label">The Story</div>
-            <h2>Chapters</h2>
+
+            <div class="section-label">
+                The Story
+            </div>
+
+            <h2>
+                Chapters
+            </h2>
+
         </div>
 
         <div class="chapter-card">
-            <span class="chapter-number">01</span>
-            <span class="chapter-title">The Year Everything Changed</span>
-            <span class="chapter-status">Coming soon</span>
+
+            <span class="chapter-number">
+                01
+            </span>
+
+            <span class="chapter-title">
+                The Year Everything Changed
+            </span>
+
+            <span class="chapter-status">
+                Coming soon
+            </span>
+
         </div>
 
         <div class="chapter-card">
-            <span class="chapter-number">02</span>
-            <span class="chapter-title">What I Gave, What I Lost</span>
-            <span class="chapter-status">Coming soon</span>
+
+            <span class="chapter-number">
+                02
+            </span>
+
+            <span class="chapter-title">
+                What I Gave, What I Lost
+            </span>
+
+            <span class="chapter-status">
+                Coming soon
+            </span>
+
         </div>
 
         <div class="chapter-card">
-            <span class="chapter-number">03</span>
-            <span class="chapter-title">When She Walked Away</span>
-            <span class="chapter-status">Coming soon</span>
+
+            <span class="chapter-number">
+                03
+            </span>
+
+            <span class="chapter-title">
+                When She Walked Away
+            </span>
+
+            <span class="chapter-status">
+                Coming soon
+            </span>
+
         </div>
 
         <div class="chapter-card">
-            <span class="chapter-number">04</span>
-            <span class="chapter-title">The Girl Who Found Me Broken</span>
-            <span class="chapter-status">Coming soon</span>
+
+            <span class="chapter-number">
+                04
+            </span>
+
+            <span class="chapter-title">
+                The Girl Who Found Me Broken
+            </span>
+
+            <span class="chapter-status">
+                Coming soon
+            </span>
+
         </div>
 
         <div class="chapter-card">
-            <span class="chapter-number">05</span>
-            <span class="chapter-title">I Didn't Know What I Had</span>
-            <span class="chapter-status">Coming soon</span>
+
+            <span class="chapter-number">
+                05
+            </span>
+
+            <span class="chapter-title">
+                I Didn't Know What I Had
+            </span>
+
+            <span class="chapter-status">
+                Coming soon
+            </span>
+
         </div>
 
     </div>
 
 </section>
 
+<!-- CLOSING -->
+
 <section class="closing">
+
     <div class="divider"></div>
-    <p>Some stories are remembered. Ours is lived.</p>
+
+    <p>
+        Some stories are remembered. Ours is lived.
+    </p>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
     Emily & James · Our Story
