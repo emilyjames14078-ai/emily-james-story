@@ -467,110 +467,129 @@
         /* ==============================
            HERO
            ============================== */
+.hero {
+    position: relative;
+    z-index: 5;
 
-        .hero {
-            position: relative;
-            z-index: 5;
+    min-height: 86vh;
 
-            min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    text-align: center;
 
-            text-align: center;
+    padding: 110px 20px 90px;
 
-            padding: 100px 20px;
-        }
+    overflow: hidden;
+}
 
         .hero-content {
             max-width: 900px;
             animation: fadeIn 1.5s ease forwards;
         }
 
-        .small-title {
-            color: #a98a6c;
+       .small-title {
+    color: #d2ae7c;
 
-            text-transform: uppercase;
+    text-transform: uppercase;
 
-            letter-spacing: 6px;
+    letter-spacing: 7px;
 
-            font-size: 11px;
+    font-size: 10px;
 
-            margin-bottom: 28px;
-        }
+    margin-bottom: 28px;
 
-        h1 {
-            font-size: clamp(58px, 11vw, 125px);
+    opacity: .85;
 
-            font-weight: normal;
+    text-shadow: 0 0 18px rgba(210,174,124,.15);
+}
+       h1 {
+    font-size: clamp(58px, 11vw, 125px);
 
-            letter-spacing: -5px;
+    font-weight: 400;
 
-            line-height: 0.9;
-        }
+    letter-spacing: -5px;
 
-        .ampersand {
-            color: #936d55;
-            font-style: italic;
-            padding: 0 8px;
-        }
+    line-height: 0.9;
 
+    color: #eee7df;
+
+    text-shadow:
+        0 0 25px rgba(210,174,124,.05),
+        0 15px 45px rgba(0,0,0,.45);
+
+    position: relative;
+}
+       .ampersand {
+    color: #d2ae7c;
+    font-style: italic;
+    padding: 0 10px;
+
+    text-shadow:
+        0 0 12px rgba(210,174,124,.25),
+        0 0 30px rgba(210,174,124,.08);
+
+    display: inline-block;
+    transform: translateY(-2px);
+}
         .subtitle {
-            margin: 38px auto 0;
+    margin: 38px auto 0;
 
-            max-width: 650px;
+    max-width: 620px;
 
-            color: #9e9690;
+    color: rgba(238,233,225,.68);
 
-            font-size: 16px;
+    font-size: 15px;
 
-            line-height: 1.9;
-        }
+    line-height: 1.9;
+
+    letter-spacing: .03em;
+
+    text-wrap: balance;
+}
 
         .start-button {
-            display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-            margin-top: 42px;
+    margin-top: 42px;
+    padding: 15px 28px;
 
-            padding: 15px 34px;
+    border: 1px solid rgba(210,174,124,.45);
+    border-radius: 2px;
 
-            border: 1px solid rgba(190,150,110,0.4);
+    color: #e8ddd2;
+    background: rgba(210,174,124,.025);
 
-            color: #ddd2c8;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 
-            text-decoration: none;
+    box-shadow: 0 0 25px rgba(210,174,124,.04);
 
-            font-size: 11px;
+    transition: all .35s ease;
+}
 
-            letter-spacing: 3px;
+.start-button span {
+    font-size: 16px;
+    line-height: 1;
+    transition: transform .35s ease;
+}
 
-            text-transform: uppercase;
+.start-button:hover {
+    background: rgba(210,174,124,.08);
+    border-color: #d2ae7c;
+    box-shadow: 0 0 30px rgba(210,174,124,.10);
+    transform: translateY(-3px);
+}
 
-            transition: 0.35s;
-        }
-
-        .start-button:hover {
-            background: rgba(190,150,110,0.08);
-
-            border-color: #b99b7a;
-
-            transform: translateY(-2px);
-        }
-
-        /* ==============================
-           DIVIDER
-           ============================== */
-
-        .divider {
-            width: 70px;
-            height: 1px;
-
-            background: rgba(185,155,120,0.45);
-
-            margin: 0 auto 35px;
-        }
-
+.start-button:hover span {
+    transform: translateX(5px);
+}
         /* ==============================
            STORY
            ============================== */
@@ -1523,13 +1542,14 @@
             </h1>
 
             <p class="subtitle">
-                A story about two people who met at the wrong time,
-                made mistakes, found each other, and slowly learned what it means to stay.
-            </p>
+    A story of two people, countless moments,
+    and a love that slowly became something more.
+</p>
 
-            <a href="#story" class="start-button">
-                Enter Our Story
-            </a>
+           <a href="#story" class="start-button">
+    Begin Our Story
+    <span>→</span>
+</a>
 
         </div>
 
