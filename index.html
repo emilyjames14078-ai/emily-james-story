@@ -483,11 +483,152 @@
 
     overflow: hidden;
 }
+.hero::before {
+    content: "";
+    position: absolute;
 
+    width: 420px;
+    height: 420px;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(210,174,124,.13) 0%,
+        rgba(210,174,124,.05) 30%,
+        transparent 70%
+    );
+
+    filter: blur(20px);
+
+    animation: heroGlow 7s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes heroGlow {
+    0% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: .45;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(35px);
+        opacity: .9;
+    }
+}
+      .hero::after {
+    content: "";
+    position: absolute;
+
+    width: 1px;
+    height: 70%;
+
+    left: 20%;
+
+    top: 15%;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(210,174,124,.18),
+        transparent
+    );
+
+    opacity: .6;
+
+    animation: heroLine 6s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes heroLine {
+    0% {
+        transform: translateY(-40px);
+        opacity: .2;
+    }
+
+    100% {
+        transform: translateY(40px);
+        opacity: .7;
+    }
+}
+      .hero .hero-content::after {
+    content: "";
+    position: absolute;
+
+    width: 1px;
+    height: 55%;
+
+    right: 20%;
+    top: 22%;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(210,174,124,.14),
+        transparent
+    );
+
+    opacity: .5;
+
+    animation: heroLineRight 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes heroLineRight {
+    0% {
+        transform: translateY(35px);
+        opacity: .15;
+    }
+
+    100% {
+        transform: translateY(-35px);
+        opacity: .65;
+    }
+}
+        .hero-content::before {
+    content: "✦   ·        ✦          ·   ✦";
+
+    position: absolute;
+     z-index: 1;
+    width: 100%;
+    left: 0;
+    top: -80px;
+
+    color: rgba(210,174,124,.22);
+
+    font-size: 10px;
+    letter-spacing: 35px;
+
+    white-space: nowrap;
+
+    animation: floatingStars 9s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes floatingStars {
+    0% {
+        transform: translateY(15px);
+        opacity: .2;
+    }
+
+    100% {
+        transform: translateY(-25px);
+        opacity: .65;
+    }
+}
         .hero-content {
-            max-width: 900px;
-            animation: fadeIn 1.5s ease forwards;
-        }
+    max-width: 900px;
+    position: relative;
+    z-index: 5;
+    animation: fadeIn 1.5s ease forwards;
+}
 
        .small-title {
     color: #d2ae7c;
