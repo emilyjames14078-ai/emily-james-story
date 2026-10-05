@@ -160,7 +160,129 @@
             animation-duration: 52s;
             animation-delay: -8s;
         }
+/* ==============================
+   OUR STORY INTRO
+   ============================== */
 
+.story-intro-section {
+    padding: 55px 24px 90px;
+    position: relative;
+    z-index: 1;
+}
+
+.story-decoration {
+    width: min(500px, 80%);
+    margin: 0 auto 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.story-decoration span {
+    height: 1px;
+    flex: 1;
+    background: rgba(210,174,124,.45);
+}
+
+.story-diamond {
+    color: #d2ae7c;
+    font-size: 14px;
+}
+
+.story-intro-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-intro-kicker {
+    margin: 0 0 16px;
+    color: #d2ae7c;
+    font-size: 11px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+}
+
+.story-intro-content h2 {
+    margin: 0 0 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 400;
+    color: #eee9e1;
+}
+
+.story-intro-text {
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(238,233,225,.68);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.story-signature {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #d2ae7c;
+    font-size: 19px;
+}
+
+.story-signature b {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: .65;
+}
+
+.story-highlights {
+    max-width: 950px;
+    margin: 65px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.story-highlight {
+    padding: 30px 24px;
+    text-align: center;
+    border: 1px solid rgba(210,174,124,.18);
+    background: rgba(8,8,9,.38);
+}
+
+.highlight-number {
+    margin-bottom: 15px;
+    color: rgba(210,174,124,.55);
+    font-size: 11px;
+    letter-spacing: .2em;
+}
+
+.story-highlight h3 {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #eee9e1;
+}
+
+.story-highlight p {
+    margin: 0;
+    color: rgba(238,233,225,.58);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    .story-intro-section {
+        padding: 40px 20px 70px;
+    }
+
+    .story-highlights {
+        grid-template-columns: 1fr;
+    }
+}
         @keyframes cloudMove {
             0% {
                 transform: translateX(-10%);
@@ -1405,6 +1527,72 @@
     </p>
 
 </section>
+<!-- Our Story Intro -->
+<section class="story-intro-section">
+
+    <div class="story-decoration">
+        <span></span>
+        <div class="story-diamond">✦</div>
+        <span></span>
+    </div>
+
+    <div class="story-intro-content">
+
+        <p class="story-intro-kicker">A Story Written Together</p>
+
+        <h2>More Than Just A Story</h2>
+
+        <p class="story-intro-text">
+            Every chapter holds a memory, every memory holds a feeling,
+            and every feeling became a part of our story. This is not just
+            something we wrote — it is a collection of moments that became
+            meaningful to us.
+        </p>
+
+        <div class="story-signature">
+            <span>Emily</span>
+            <b>&amp;</b>
+            <span>James</span>
+        </div>
+
+    </div>
+
+    <div class="story-highlights">
+
+        <div class="story-highlight">
+            <div class="highlight-number">01</div>
+            <h3>The Beginning</h3>
+            <p>Where our story found its first chapter.</p>
+        </div>
+
+        <div class="story-highlight">
+            <div class="highlight-number">02</div>
+            <h3>The Moments</h3>
+            <p>The little memories that became unforgettable.</p>
+        </div>
+
+        <div class="story-highlight">
+            <div class="highlight-number">03</div>
+            <h3>The Journey</h3>
+            <p>Everything we experienced, remembered together.</p>
+        </div>
+
+    </div>
+
+</section>   
+  <!-- Our Journey Divider -->
+<div class="journey-divider">
+
+    <span class="journey-line"></span>
+
+    <div class="journey-center">
+        <span class="journey-small">OUR JOURNEY</span>
+        <span class="journey-symbol">✦</span>
+    </div>
+
+    <span class="journey-line"></span>
+
+</div>  
 <section class="chapters" id="chapters">
 
         <div class="chapters-inner">
