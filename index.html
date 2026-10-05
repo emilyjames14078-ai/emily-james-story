@@ -990,12 +990,13 @@
         }
 
     
-/* Book Cover + Let's Talk additions */
+/* New Book Cover */
 .book-cover-section {
     padding: 110px 24px 100px;
     position: relative;
     z-index: 1;
 }
+
 .book-cover-wrap {
     max-width: 1050px;
     margin: 0 auto;
@@ -1003,65 +1004,27 @@
     align-items: center;
     justify-content: center;
 }
+
 .book-cover {
-    width: min(330px, 82vw);
+    width: min(430px, 88vw);
     aspect-ratio: 2 / 3;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
-    background:
-        radial-gradient(circle at 65% 28%, rgba(210,174,124,.18), transparent 30%),
-        linear-gradient(145deg, #17120f, #080809 68%);
+    background: #080809;
     border: 1px solid rgba(210,174,124,.38);
-    box-shadow: 0 30px 70px rgba(0,0,0,.58), 0 0 45px rgba(210,174,124,.08);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.58),
+        0 0 45px rgba(210,174,124,.08);
 }
-.book-cover::before {
-    content: "";
-    position: absolute;
-    inset: 14px;
-    border: 1px solid rgba(238,233,225,.22);
-    pointer-events: none;
-}
-.book-cover-inner {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    padding: 46px 28px 34px;
-    position: relative;
-    z-index: 1;
-}
-.book-cover-kicker {
-    font-size: 11px;
-    letter-spacing: .28em;
-    text-transform: uppercase;
-    color: #d2ae7c;
-}
-.book-cover-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(34px, 6vw, 52px);
-    line-height: .95;
-    color: #eee9e1;
-}
-.book-cover-title span {
+
+.book-cover-image {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.book-cover-rule {
-    width: 52px;
-    height: 1px;
-    background: #d2ae7c;
-    opacity: .75;
-    margin: 20px auto;
-}
-.book-cover-author {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 14px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: #d2ae7c;
-}
+
 .book-cover-note {
     max-width: 610px;
     margin: 28px auto 0;
