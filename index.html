@@ -1859,7 +1859,41 @@
             color: #d2ae7c;
             font-size: 12px;
         }
+/* ==============================
+   MUSIC ON / OFF BUTTON
+   ============================== */
 
+.music-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(210,174,124,.55);
+    background: rgba(7,6,6,.78);
+    backdrop-filter: blur(10px);
+    color: #d2ae7c;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow:
+        0 0 20px rgba(210,174,124,.08),
+        inset 0 0 15px rgba(210,174,124,.03);
+    transition: all .35s ease;
+}
+
+.music-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: #d2ae7c;
+    background: rgba(210,174,124,.08);
+    box-shadow:
+        0 0 30px rgba(210,174,124,.18),
+        inset 0 0 15px rgba(210,174,124,.05);
+}
     </style>
 
 </head>
@@ -1884,7 +1918,25 @@
         <div class="lightning"></div>
 
     </div>
+<body>
 
+<!-- ==============================
+     BACKGROUND MUSIC
+     ============================== -->
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" class="music-toggle" aria-label="Music On/Off">
+    ♪
+</button>
+
+<!-- ==============================
+     BACKGROUND
+     ============================== -->
+
+<div class="background">
 
     <!-- ==============================
          NAVIGATION
@@ -4445,6 +4497,36 @@
         });
 
     </script>
+<script>
+    const bgMusic = document.getElementById("bgMusic");
+    const musicToggle = document.getElementById("musicToggle");
 
+    bgMusic.volume = 0.35;
+
+    function musicOn() {
+        bgMusic.play().then(() => {
+            musicToggle.innerHTML = "♫";
+        }).catch(() => {
+            // Browser ne autoplay block kiya
+        });
+    }
+
+    function musicOff() {
+        bgMusic.pause();
+        musicToggle.innerHTML = "♪";
+    }
+
+    musicToggle.addEventListener("click", () => {
+        if (bgMusic.paused) {
+            musicOn();
+        } else {
+            musicOff();
+        }
+    });
+
+    window.addEventListener("load", () => {
+        musicOn();
+    });
+</script>
 </body>
 </html>
