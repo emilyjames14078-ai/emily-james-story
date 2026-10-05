@@ -1114,34 +1114,70 @@
     
 /* New Book Cover */
 .book-cover-section {
-    padding: 110px 24px 100px;
+    padding: 75px 24px 55px;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .book-cover-wrap {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 35px auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 10px 0 5px;
+    position: relative;
+}
+.book-cover-wrap::before {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background: rgba(210,174,124,.10);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
+.book-cover-wrap::after {
+    content: "✦";
+    position: absolute;
+    left: 50%;
+    bottom: -38px;
+    transform: translateX(-50%);
+    color: rgba(210,174,124,.65);
+    font-size: 14px;
+    pointer-events: none;
+}
 .book-cover {
     width: min(430px, 88vw);
     aspect-ratio: 3 / 4;
     margin: 0 auto;
-    border-radius: 6px;
+    border-radius: 7px;
     overflow: hidden;
     position: relative;
+    z-index: 2;
     background: #080809;
-    border: 1px solid rgba(210,174,124,.45);
+    border: 1px solid rgba(210,174,124,.55);
+
     box-shadow:
-        0 30px 80px rgba(0,0,0,.65),
-        0 0 50px rgba(210,174,124,.12);
+        0 35px 90px rgba(0,0,0,.75),
+        0 0 35px rgba(210,174,124,.12),
+        0 0 100px rgba(210,174,124,.05);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.book-cover:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 45px 100px rgba(0,0,0,.80),
+        0 0 45px rgba(210,174,124,.18),
+        0 0 120px rgba(210,174,124,.08);
 }
 
 .book-cover-image {
@@ -1150,15 +1186,28 @@
     height: 100%;
     object-fit: contain;
     object-position: center center;
+    position: relative;
+    z-index: 1;
 }
 
 .book-cover-note {
-    max-width: 610px;
-    margin: 20px auto 0;
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 0 20px;
     text-align: center;
-    color: rgba(238,233,225,.68);
+    color: rgba(238,233,225,.62);
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.9;
+    letter-spacing: .02em;
+    position: relative;
+}
+
+.book-cover-note::before {
+    content: "✦";
+    display: block;
+    margin-bottom: 14px;
+    color: #d2ae7c;
+    font-size: 11px;
 }
 .lets-talk-section {
     padding: 105px 24px 120px;
@@ -1212,15 +1261,33 @@
     border-color: #d2ae7c;
 }
 @media (max-width: 700px) {
-    .book-cover-section, .lets-talk-section {
+
+    .book-cover-section {
+        padding: 65px 20px 45px;
+    }
+
+    .book-cover-wrap {
+        margin-top: 25px;
+    }
+
+    .book-cover {
+        width: min(390px, 90vw);
+    }
+
+    .book-cover-note {
+        margin-top: 26px;
+        font-size: 13px;
+    }
+
+    .lets-talk-section {
         padding-top: 80px;
         padding-bottom: 80px;
     }
+
     .lets-talk-box {
         padding: 48px 20px;
     }
 }
-
 
 /* Let's Talk contact layout */
 .lets-talk-section {
