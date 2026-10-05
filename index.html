@@ -497,7 +497,100 @@
 
             overflow: hidden;
         }
+.hero::before {
+    content: "";
 
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 90%,
+            rgba(147,109,85,.20),
+            transparent 28%
+        ),
+        radial-gradient(
+            ellipse at 85% 10%,
+            rgba(147,109,85,.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(210,174,124,.08),
+            transparent 35%
+        );
+
+    filter: blur(35px);
+
+    animation: atmosphereMove 12s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+@keyframes atmosphereMove {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1.08) translateY(-20px);
+    }
+}
+      .hero-line {
+    position: absolute;
+
+    width: 1px;
+    height: 65%;
+
+    top: 18%;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(210,174,124,.20),
+        transparent
+    );
+
+    opacity: .55;
+
+    pointer-events: none;
+}
+
+.hero-line-left {
+    left: 16%;
+    animation: lineMoveLeft 7s ease-in-out infinite alternate;
+}
+
+.hero-line-right {
+    right: 16%;
+    animation: lineMoveRight 9s ease-in-out infinite alternate;
+}
+
+@keyframes lineMoveLeft {
+    0% {
+        transform: translateY(-35px);
+        opacity: .15;
+    }
+
+    100% {
+        transform: translateY(35px);
+        opacity: .65;
+    }
+}
+
+@keyframes lineMoveRight {
+    0% {
+        transform: translateY(35px);
+        opacity: .15;
+    }
+
+    100% {
+        transform: translateY(-35px);
+        opacity: .65;
+    }
+}  
         .hero::before {
             content: "";
             position: absolute;
@@ -648,74 +741,326 @@
             z-index: 5;
             animation: fadeIn 1.5s ease forwards;
         }
+.hero-stars {
+    position: absolute;
+    inset: -100px -160px;
+    pointer-events: none;
+    z-index: -1;
+}
+.hero-particles {
+    position: absolute;
+    inset: 0;
 
-        .small-title {
-            color: #d2ae7c;
-            text-transform: uppercase;
-            letter-spacing: 7px;
-            font-size: 10px;
-            margin-bottom: 28px;
-            opacity: .85;
-            text-shadow: 0 0 18px rgba(210,174,124,.15);
-        }
+    pointer-events: none;
 
+    z-index: -1;
+}
+
+.hero-particles span {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #d2ae7c;
+
+    box-shadow:
+        0 0 8px rgba(210,174,124,.8),
+        0 0 18px rgba(210,174,124,.35);
+
+    animation: particleFloat 6s ease-in-out infinite alternate;
+}
+
+.hero-particles span:nth-child(1) {
+    left: 18%;
+    top: 22%;
+}
+
+.hero-particles span:nth-child(2) {
+    left: 30%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.hero-particles span:nth-child(3) {
+    left: 72%;
+    top: 25%;
+    animation-delay: 2s;
+}
+
+.hero-particles span:nth-child(4) {
+    left: 82%;
+    top: 68%;
+    animation-delay: .5s;
+}
+
+.hero-particles span:nth-child(5) {
+    left: 12%;
+    top: 52%;
+    animation-delay: 1.5s;
+}
+
+.hero-particles span:nth-child(6) {
+    left: 88%;
+    top: 42%;
+    animation-delay: 2.5s;
+}
+
+.hero-particles span:nth-child(7) {
+    left: 40%;
+    top: 18%;
+    animation-delay: 3s;
+}
+
+.hero-particles span:nth-child(8) {
+    left: 62%;
+    top: 78%;
+    animation-delay: 1.8s;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(12px);
+        opacity: .15;
+    }
+
+    100% {
+        transform: translateY(-18px);
+        opacity: .8;
+    }
+}
+.star {
+    position: absolute;
+
+    color: #d2ae7c;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 0 5px rgba(210,174,124,.9),
+        0 0 15px rgba(210,174,124,.65),
+        0 0 35px rgba(210,174,124,.35);
+
+    animation:
+        starFloat 4s ease-in-out infinite alternate,
+        starGlow 2.5s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes starGlow {
+    0% {
+        filter: brightness(.7);
+    }
+
+    100% {
+        filter: brightness(1.7);
+    }
+}
+
+    text-shadow:
+        0 0 8px rgba(210,174,124,.5),
+        0 0 22px rgba(210,174,124,.25);
+
+    animation: starFloat 5s ease-in-out infinite alternate;
+}
+
+.star-1 {
+    top: 8%;
+    left: 10%;
+    font-size: 30px;
+}
+
+.star-2 {
+    top: 18%;
+    right: 13%;
+    font-size: 18px;
+    animation-delay: 1s;
+}
+
+.star-3 {
+    top: 48%;
+    left: 3%;
+    font-size: 15px;
+    animation-delay: 2s;
+}
+
+.star-4 {
+    top: 55%;
+    right: 5%;
+    font-size: 34px;
+    animation-delay: .5s;
+}
+
+.star-5 {
+    bottom: 8%;
+    left: 17%;
+    font-size: 17px;
+    animation-delay: 1.5s;
+}
+
+.star-6 {
+    bottom: 12%;
+    right: 18%;
+    font-size: 25px;
+    animation-delay: 2.5s;
+}
+
+.star-7 {
+    top: 35%;
+    left: 22%;
+    font-size: 20px;
+    opacity: .45;
+}
+
+.star-8 {
+    top: 32%;
+    right: 24%;
+    font-size: 20px;
+    opacity: .4;
+}
+@keyframes starFloat {
+    0% {
+        transform: translateY(10px) scale(.9);
+        opacity: .25;
+    }
+
+    100% {
+        transform: translateY(-15px) scale(1.15);
+        opacity: .9;
+    }
+}
+       .small-title {
+    color: #d2ae7c;
+
+    text-transform: uppercase;
+
+    letter-spacing: 8px;
+
+    font-size: 10px;
+
+    margin-bottom: 30px;
+
+    opacity: .9;
+
+    text-shadow:
+        0 0 18px rgba(210,174,124,.25);
+
+    position: relative;
+}
         h1 {
-            font-size: clamp(58px, 11vw, 125px);
-            font-weight: 400;
-            letter-spacing: -5px;
-            line-height: 0.9;
-            color: #eee7df;
-            text-shadow:
-                0 0 25px rgba(210,174,124,.05),
-                0 15px 45px rgba(0,0,0,.45);
-            position: relative;
-        }
+           font-size: clamp(58px, 11vw, 125px);
 
+font-weight: 400;
+
+letter-spacing: -5px;
+
+line-height: .88;
+
+color: #eee7df;
+
+position: relative;
+
+text-shadow:
+    0 0 20px rgba(238,231,223,.04),
+    0 15px 50px rgba(0,0,0,.65);
         .ampersand {
-            color: #d2ae7c;
-            font-style: italic;
-            padding: 0 10px;
-            text-shadow:
-                0 0 12px rgba(210,174,124,.25),
-                0 0 30px rgba(210,174,124,.08);
-            display: inline-block;
-            transform: translateY(-2px);
-        }
+    color: #d2ae7c;
+
+    font-style: italic;
+
+    padding: 0 10px;
+
+    display: inline-block;
+
+    text-shadow:
+        0 0 15px rgba(210,174,124,.35),
+        0 0 40px rgba(210,174,124,.12);
+
+    transform: translateY(-3px);
+}
 
         .subtitle {
-            margin: 38px auto 0;
-            max-width: 620px;
-            color: rgba(238,233,225,.68);
-            font-size: 15px;
-            line-height: 1.9;
-            letter-spacing: .03em;
-            text-wrap: balance;
-        }
+           margin: 42px auto 0;
 
-        .start-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+max-width: 650px;
 
-            margin-top: 42px;
-            padding: 15px 28px;
+color: rgba(238,233,225,.68);
 
-            border: 1px solid rgba(210,174,124,.45);
-            border-radius: 2px;
+font-size: 15px;
 
-            color: #e8ddd2;
-            background: rgba(210,174,124,.025);
+line-height: 1.9;
 
-            text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+letter-spacing: .04em;
 
-            box-shadow: 0 0 25px rgba(210,174,124,.04);
+text-wrap: balance;
 
-            transition: all .35s ease;
-        }
+text-shadow:
+    0 5px 25px rgba(0,0,0,.7);
+       .start-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 42px;
+
+    padding: 16px 30px;
+
+    border: 1px solid rgba(210,174,124,.55);
+
+    border-radius: 40px;
+
+    color: #e8ddd2;
+
+    background: rgba(210,174,124,.025);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 25px rgba(210,174,124,.04),
+        inset 0 0 20px rgba(210,174,124,.02);
+
+    transition: all .4s ease;
+}
+
+.start-button span {
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition: transform .4s ease;
+}
+
+.start-button:hover {
+    color: #fff;
+
+    background: rgba(210,174,124,.08);
+
+    border-color: #d2ae7c;
+
+    box-shadow:
+        0 0 35px rgba(210,174,124,.16),
+        inset 0 0 20px rgba(210,174,124,.04);
+
+    transform: translateY(-3px);
+}
+
+.start-button:hover span {
+    transform: translateX(7px);
+}
 
         .start-button span {
             font-size: 16px;
@@ -1585,28 +1930,52 @@
          ============================== -->
 
     <section class="hero">
-
+<div class="hero-line hero-line-left"></div>
+<div class="hero-line hero-line-right"></div>
+        
         <div class="hero-content">
+            
+<div class="hero-particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+            
+    <div class="hero-stars">
+        <span class="star star-1">✦</span>
+        <span class="star star-2">✦</span>
+        <span class="star star-3">✦</span>
+        <span class="star star-4">✦</span>
+        <span class="star star-5">✦</span>
+        <span class="star star-6">✦</span>
+        <span class="star star-7">·</span>
+        <span class="star star-8">·</span>
+    </div>
 
-            <div class="small-title">
-                A story about two people
-            </div>
+    <div class="small-title">
+    THE STORY
+</div>
 
-            <h1>
-                Emily <span class="ampersand">&</span> James
-            </h1>
+    <h1>
+        Emily <span class="ampersand">&amp;</span> James
+    </h1>
 
-            <p class="subtitle">
-                A story of two people, countless moments,
-                and a love that slowly became something more.
-            </p>
+    <p class="subtitle">
+        A story of two people, countless moments,
+        and a love that slowly became something more.
+    </p>
 
-            <a href="#story" class="start-button">
-                Begin Our Story
-                <span>→</span>
-            </a>
+    <a href="#book" class="start-button">
+        Enter Our Story
+        <span>→</span>
+    </a>
 
-        </div>
+</div>
 
     </section>
 
